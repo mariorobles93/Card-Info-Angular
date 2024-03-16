@@ -1,0 +1,31 @@
+<div class="customers">
+  <div class="customer" *ngFor="let customer of customers">
+    <p-card header="{{customer.firstName}} {{customer.lastName}}"
+            subheader="{{customer.email}}" >
+        <div class="customer-info">
+          <p>{{customer.phoneNumber}}</p>
+          <small>Phone Number</small>
+        </div>
+        <div class="customer-info">
+          <div  class="customer-info"
+                *ngIf="customer.loyaltyPoints > 0">
+            <p>{{customer.loyaltyPoints}}</p>
+            <small>Royalty Points</small>
+          </div>
+          <div class="customer-info"
+               *ngIf="customer.numberOfPurchases > 0">
+            <p>{{customer.numberOfPurchases}}</p>
+            <small>Purchases</small>
+          </div>
+        </div>
+
+      <ng-template pTemplate="footer">
+        <div class="customer-info"
+             *ngIf="customer.associateName">
+          <p>{{ customer.associateName }}</p>
+          <small>Associate</small>
+        </div>
+      </ng-template>
+    </p-card>
+  </div>
+</div>

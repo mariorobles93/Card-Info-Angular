@@ -1,0 +1,34 @@
+<form class="add-new-costumer"
+         [formGroup]="formGroup"
+         (ngSubmit)="addNewCustomer()">
+  <div class="input">
+    <label for="firstName">First Name</label>
+    <input pInputText id="firstName"
+           aria-describedby="first-name-help"
+           formControlName="firstName"/>
+    <small id="first-name-help">Enter your First Name</small>
+  </div>
+  <div class="input">
+    <label for="lastName">Last Name</label>
+    <input pInputText id="lastName"
+           aria-describedby="last-name-help"
+           formControlName="lastName" />
+    <small id="last-name-help">Enter your Last Name</small>
+  </div>
+  <div class="input">
+    <label for="email">Email</label>
+    <input pInputText id="email"
+           aria-describedby="email-help"
+           formControlName="email" />
+    <small id="email-help">Enter your Email</small>
+  </div>
+  <div class="input">
+    <label for="phoneNumber">Phone Number</label>
+    <input pInputText id="phoneNumber"
+           aria-describedby="phone-number-help"
+           formControlName="phoneNumber" />
+    <small id="phone-number-help">Enter your Phone Number</small>
+  </div>
+
+  <p-button type="submit">Add New Customer</p-button>
+</form>

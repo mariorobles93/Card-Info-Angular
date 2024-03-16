@@ -1,0 +1,14 @@
+.customers{
+  .customer{
+    margin-top: 1.5rem;
+  }
+  .customer-info{
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    p{
+      margin-block-start: .5em;
+      margin-block-end: .5em;
+    }
+  }
+}
