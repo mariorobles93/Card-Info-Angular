@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+
+/** Third Party **/
+.p-card-content{
+  padding-top: .75rem;
+  padding-bottom: 0;
+}
