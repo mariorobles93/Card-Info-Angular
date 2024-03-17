@@ -11,4 +11,8 @@
       margin-block-end: .5em;
     }
   }
+  .customer-footer{
+    display: flex;
+    justify-content: space-between;
+  }
 }
