@@ -21,7 +21,7 @@ export class CustomersComponent implements OnInit{
   private customersService: CustomerService;
   public customers: Customer[] = [];
 
-  @Output() editCustomerEmitter = new EventEmitter<string>();
+  @Output() onEditClickEmitter = new EventEmitter<Customer>();
 
   constructor(customersService: CustomerService) {
     this.customersService = customersService;
@@ -33,7 +33,7 @@ export class CustomersComponent implements OnInit{
       .subscribe(value => this.customers = value);
   }
 
-  editCustomer(id: string){
-    this.editCustomerEmitter.emit(id);
+  editCustomer(customer: Customer){
+    this.onEditClickEmitter.emit(customer);
   }
 }

@@ -1,0 +1,62 @@
+<h1>Edit User</h1>
+<form class="edit-costumer"
+      [formGroup]="formGroup"
+      (ngSubmit)="onSubmit()">
+  <div class="input">
+    <label for="firstName" >First Name</label>
+    <input pInputText id="firstName"
+           aria-describedby="first-name-help"
+           placeholder="Enter First Name"
+           formControlName="firstName"/>
+  </div>
+  <div class="input">
+    <label for="lastName">Last Name</label>
+    <input pInputText id="lastName"
+           aria-describedby="last-name-help"
+           placeholder="Enter Last Name"
+           formControlName="lastName" />
+  </div>
+  <div class="input">
+    <label for="email">Email</label>
+    <input pInputText id="email"
+           aria-describedby="email-help"
+           placeholder="Enter Email"
+           formControlName="email" />
+  </div>
+  <div class="input">
+    <label for="phoneNumber">Phone Number</label>
+    <input pInputText id="phoneNumber"
+           aria-describedby="phone-number-help"
+           placeholder="Enter Phone Number"
+           formControlName="phoneNumber" />
+  </div>
+  <div class="input">
+    <label for="phoneNumber">Loyalty Points</label>
+    <p-inputNumber id="loyaltyPoints"
+           aria-describedby="loyalty-points-help"
+           placeholder="Enter number of loyalty points"
+           formControlName="loyaltyPoints" />
+  </div>
+  <div class="input">
+    <label for="phoneNumber">Number of Purchases</label>
+    <p-inputNumber id="numberOfPurchases"
+                   aria-describedby="number-purchases-help"
+                   placeholder="Enter Number of Purchases"
+                   formControlName="numberOfPurchases" />
+  </div>
+  <div class="input">
+    <label for="associateName">Associate</label>
+    <p-dropdown id="associateName"
+                formControlName="associateName"
+                optionLabel="name"
+                placeholder="Select an Associate"
+                [options]="associates"
+                [filter]="true"
+                filterBy="name"></p-dropdown>
+  </div>
+
+
+  <div class="submit-button">
+    <p-button type="submit" [disabled]="formGroup.invalid">Submit</p-button>
+  </div>
+</form>

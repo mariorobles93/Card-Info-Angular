@@ -1,4 +1,10 @@
 <div class="app-body">
-  <app-customers></app-customers>
-  <app-add-new-customer></app-add-new-customer>
+  <app-edit-customer class="app-component"
+                     *ngIf="isEdit"
+                     (onSubmitEmitter)="isEdit=false"
+                     [customer]="customer" ></app-edit-customer>
+  <app-add-new-customer class="app-component"
+                        *ngIf="!isEdit"></app-add-new-customer>
+  <app-customers class="app-component"
+                 (onEditClickEmitter)="setEditCustomer($event, true)"></app-customers>
 </div>
