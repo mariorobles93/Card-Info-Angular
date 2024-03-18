@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {ButtonModule} from "primeng/button";
 import {InputTextModule} from "primeng/inputtext";
 import {CustomerService} from "../Services/customer-service/customer.service";
@@ -19,9 +19,9 @@ export class AddNewCustomerComponent implements OnInit{
   https://angular.io/guide/forms-overview#choosing-an-approach
   **/
   formGroup : FormGroup = new FormGroup({
-    firstName: new FormControl(),
-    lastName: new FormControl(),
-    email: new FormControl(),
+    firstName: new FormControl('',[Validators.required]),
+    lastName: new FormControl('',[Validators.required]),
+    email: new FormControl('',[Validators.required]),
     phoneNumber: new FormControl()
   });
 

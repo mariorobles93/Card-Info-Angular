@@ -3,35 +3,35 @@
          [formGroup]="formGroup"
          (ngSubmit)="onSubmit()">
   <div class="input">
-    <label for="firstName">First Name</label>
+    <label for="firstName" >First Name</label>
     <input pInputText id="firstName"
            aria-describedby="first-name-help"
+           placeholder="Enter your First Name"
            formControlName="firstName"/>
-    <small id="first-name-help">Enter your First Name</small>
   </div>
   <div class="input">
     <label for="lastName">Last Name</label>
     <input pInputText id="lastName"
            aria-describedby="last-name-help"
+           placeholder="Enter your Last Name"
            formControlName="lastName" />
-    <small id="last-name-help">Enter your Last Name</small>
   </div>
   <div class="input">
     <label for="email">Email</label>
     <input pInputText id="email"
            aria-describedby="email-help"
+           placeholder="Enter your Email"
            formControlName="email" />
-    <small id="email-help">Enter your Email</small>
   </div>
   <div class="input">
     <label for="phoneNumber">Phone Number</label>
     <input pInputText id="phoneNumber"
            aria-describedby="phone-number-help"
+           placeholder="Enter your Phone Number"
            formControlName="phoneNumber" />
-    <small id="phone-number-help">Enter your Phone Number</small>
   </div>
 
   <div class="submit-button">
-    <p-button type="submit">Submit</p-button>
+    <p-button type="submit" [disabled]="formGroup.invalid">Submit</p-button>
   </div>
 </form>
