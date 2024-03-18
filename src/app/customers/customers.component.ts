@@ -33,7 +33,16 @@ export class CustomersComponent implements OnInit{
       .subscribe(value => this.customers = value);
   }
 
+  /**
+   * Emits Customer, scrolls window to top (Mobile First)
+   * @param customer
+   */
   editCustomer(customer: Customer){
     this.onEditClickEmitter.emit(customer);
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
   }
 }

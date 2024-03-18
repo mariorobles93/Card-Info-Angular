@@ -20,6 +20,5 @@ export class AppComponent {
   setEditCustomer(customer: Customer, isEdit: boolean = false){
     this.customer = customer;
     this.isEdit = isEdit;
-    console.log(customer);
   }
 }
