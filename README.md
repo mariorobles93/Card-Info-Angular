@@ -1,5 +1,5 @@
 # Card-Info-Angular
-An Angular page displays a set of cards populated with information taken from a relational database, Users can add and edit cards.
+An Angular page displays a set of cards populated with information taken from a relational database hosted on Supabase, Users can add and edit cards.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.0.
 
