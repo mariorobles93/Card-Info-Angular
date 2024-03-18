@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import { createClient } from '@supabase/supabase-js'
-import {from, Observable, Subject} from "rxjs";
+import {BehaviorSubject, from, Observable} from "rxjs";
 import {Associate, Customer} from "../../types";
 import {environment} from "../../../environments/environment";
 
@@ -14,8 +14,8 @@ export class CustomerService {
   // Create a single supabase client for interacting with your database
   private supabase = createClient(environment.SUPABASE_PROJECT_URL, environment.SUPABASE_PUBLIC_API_KEY);
 
-  public associates : Subject<Associate[]> = new Subject<Associate[]>()
-  public customers: Subject<Customer[]> = new Subject<Customer[]>();
+  public associates : BehaviorSubject<Associate[]> = new BehaviorSubject<Associate[]>([]);
+  public customers: BehaviorSubject<Customer[]> = new BehaviorSubject<Customer[]>([]);
   constructor() {
     //Init
    this.populateCustomers();
@@ -80,7 +80,7 @@ export class CustomerService {
   public editCustomer(customerInfo: Customer){
     return from(this.supabase
       .from('customers')
-      .update(customerInfo)
+      .update({associateId: customerInfo.associateId})
       .eq('id', customerInfo.id)
       .select());
   }

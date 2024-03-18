@@ -6,10 +6,15 @@
   }
   .submit-button{
     margin-top: 1.5rem;
+    display: flex;
+    gap: 1.5rem;
   }
 
   /** Third Party **/
   .p-dropdown{
+    width: 100%;
+  }
+  .p-inputnumber{
     width: 100%;
   }
 }

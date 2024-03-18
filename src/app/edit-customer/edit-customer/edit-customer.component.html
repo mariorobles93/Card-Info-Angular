@@ -45,18 +45,24 @@
                    formControlName="numberOfPurchases" />
   </div>
   <div class="input">
-    <label for="associateName">Associate</label>
-    <p-dropdown id="associateName"
-                formControlName="associateName"
+    <label for="associateId">Associate</label>
+    <p-dropdown id="associateId"
+                formControlName="associateId"
                 optionLabel="name"
                 placeholder="Select an Associate"
                 [options]="associates"
+                optionValue="id"
                 [filter]="true"
                 filterBy="name"></p-dropdown>
   </div>
 
-
   <div class="submit-button">
+    <p-button (onClick)="this.onSubmitEmitter.emit(true)"
+              type="button"
+              severity="danger">Cancel</p-button>
+    <p-button (onClick)="onReset()"
+              type="button"
+              severity="info">Reset</p-button>
     <p-button type="submit" [disabled]="formGroup.invalid">Submit</p-button>
   </div>
 </form>
