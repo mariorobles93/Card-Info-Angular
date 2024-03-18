@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {CardModule} from "primeng/card";
 import {CustomerService} from "../Services/customer-service/customer.service";
-import {Associate, Customer} from "../types";
+import {Customer} from "../types";
 import {NgForOf, NgIf} from "@angular/common";
+import {ButtonModule} from "primeng/button";
 
 @Component({
   selector: 'app-customers',
@@ -10,7 +11,8 @@ import {NgForOf, NgIf} from "@angular/common";
   imports: [
     CardModule,
     NgForOf,
-    NgIf
+    NgIf,
+    ButtonModule
   ],
   templateUrl: './customers.component.html',
   styleUrl: './customers.component.css'
@@ -18,7 +20,9 @@ import {NgForOf, NgIf} from "@angular/common";
 export class CustomersComponent implements OnInit{
   private customersService: CustomerService;
   public customers: Customer[] = [];
-  public associates: Associate[] = [];
+
+  @Output() editCustomerEmitter = new EventEmitter<string>();
+
   constructor(customersService: CustomerService) {
     this.customersService = customersService;
   }
@@ -27,5 +31,9 @@ export class CustomersComponent implements OnInit{
     //Init Customer Data
     this.customersService.customers
       .subscribe(value => this.customers = value);
+  }
+
+  editCustomer(id: string){
+    this.editCustomerEmitter.emit(id);
   }
 }

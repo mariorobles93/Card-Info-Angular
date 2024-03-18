@@ -11,6 +11,15 @@
       margin-block-end: .5em;
     }
   }
+  .customer-info-section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .customer-edit-button{
+    text-align: end;
+  }
   .customer-footer{
     display: flex;
     justify-content: space-between;
